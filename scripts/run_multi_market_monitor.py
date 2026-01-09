@@ -361,6 +361,12 @@ class MultiMarketMonitor:
                 
                 alert_key = f"{market_id}:ask:{price}"
                 if not self._is_in_cooldown(alert_key, now):
+                    # 调试日志：显示所有币种的增量计算
+                    logger.debug(
+                        f"🔍 {ticker}: price={price_f}, "
+                        f"total={size_f}, prev={prev_size}, Δ={delta_size:.2f}, "
+                        f"Δvalue=${delta_value:,.0f}"
+                    )
                     new_large_orders.append(LargeOrder(
                         side="ask",
                         price=price_f,
@@ -406,7 +412,7 @@ class MultiMarketMonitor:
         ticker = MARKETS.get(market_id, {}).get("ticker", f"MARKET-{market_id}")
         
         emoji = "🟢" if order.side == "bid" else "🔴"
-        logger.warning(f"{emoji} [{ticker}] 大单! {order}")
+        logger.warning(f"{emoji} [{ticker}] 新增Δ! {order}")
         
         if self._notifier:
             await self._notifier.send_large_order_alert(
