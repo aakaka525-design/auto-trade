@@ -1,0 +1,32 @@
+# 敏感配置
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# 日志
+*.log
+trade.log
+
+# 临时文件
+*.resolved
+*.bak
+*.tmp
+
+# 测试覆盖率
+htmlcov/
+.coverage
