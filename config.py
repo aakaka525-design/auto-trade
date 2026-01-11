@@ -53,6 +53,25 @@ class Settings(BaseSettings):
     MAX_DAILY_LOSS_PCT: float = 5.0
     MIN_CONFIDENCE_THRESHOLD: float = 0.6
     
+    # ==================== 交易所选择 ====================
+    # 交易执行使用的交易所: "lighter" 或 "binance"
+    ACTIVE_EXCHANGE: Literal["lighter", "binance"] = "lighter"
+    
+    # 监控的交易所列表 (逗号分隔): "lighter", "binance", 或 "lighter,binance" 同时监控
+    MONITOR_EXCHANGES: str = "lighter"
+    
+    # ==================== Binance 配置 ====================
+    BINANCE_API_KEY: str = ""
+    BINANCE_API_SECRET: str = ""  # HMAC 签名需要
+    BINANCE_TESTNET: bool = False  # True = 测试网
+    
+    # Ed25519 签名 (可选，比 HMAC 更安全)
+    # 签名方式: "HMAC" 或 "Ed25519"
+    BINANCE_SIGN_TYPE: Literal["HMAC", "Ed25519"] = "HMAC"
+    # Ed25519 私钥 (PEM 格式，仅当 SIGN_TYPE=Ed25519 时需要)
+    BINANCE_PRIVATE_KEY: str = ""
+
+    
     # API 成本控制
     DAILY_API_CALL_LIMIT: int = 500  # 每日最多调用 AI 次数
     
@@ -65,11 +84,15 @@ class Settings(BaseSettings):
     HTTP_PROXY: str = ""
     HTTPS_PROXY: str = ""
     
-    # Telegram 警报
+    # Telegram 警报 (普通级别)
     TELEGRAM_BOT_TOKEN: str = ""
     TELEGRAM_CHAT_ID: str = ""
     
-    # 大单监控 - 分级阈值
+    # Telegram 紧急 Bot (极端行情专用)
+    TELEGRAM_URGENT_BOT_TOKEN: str = ""
+    TELEGRAM_URGENT_CHAT_ID: str = ""
+    
+    # ==================== 大单监控 - Lighter ====================
     LARGE_ORDER_MIN_VALUE_MAJOR: float = 1000000.0  # 主流币 $1M
     LARGE_ORDER_MIN_VALUE_OTHER: float = 100000.0   # 其他币 $100K
     MAJOR_MARKET_IDS: str = "0,1,2,7,8,9,25"  # ETH, BTC, SOL, XRP, LINK, AVAX, BNB
@@ -77,9 +100,32 @@ class Settings(BaseSettings):
     # 市场监控范围: "all", "perp", 或指定ID如 "0,1,2,3"
     MONITOR_MARKETS: str = ""
     
-    # 价格异常警报
-    PRICE_PUMP_THRESHOLD: float = 0.5  # 拉升阈值 (%)
-    PRICE_DUMP_THRESHOLD: float = -0.5  # 暴跌阈值 (%)
+    # ==================== 大单监控 - Binance (VWAP 滑点 + 分级告警) ====================
+    # 分级滑点阈值
+    SLIPPAGE_THRESHOLD_LOW: float = 0.5     # 0.5% -> LOW (日志记录)
+    SLIPPAGE_THRESHOLD_MED: float = 2.0     # 2.0% -> MEDIUM (普通推送)
+    SLIPPAGE_THRESHOLD_HIGH: float = 10.0   # 10% -> HIGH (紧急推送)
+    
+    # 旧配置兼容 (单一阈值)
+    SLIPPAGE_THRESHOLD: Optional[float] = None
+    
+    # 最低金额阈值 (低于此值不计算滑点)
+    MIN_ORDER_VALUE_SPOT: float = 50000.0  # 现货 $50K
+    MIN_ORDER_VALUE_FUTURES: float = 20000.0  # 合约 $20K
+    
+    # 订单簿缓存档位数
+    ORDERBOOK_DEPTH: int = 50
+    
+    # 剔除前 N 档 (减少虚单干扰)
+    SKIP_TOP_LEVELS: int = 1
+    
+    # 监控开关
+    BINANCE_MONITOR_FUTURES: bool = True
+    BINANCE_MONITOR_SPOT: bool = True
+    
+    # ==================== 价格异常警报 ====================
+    PRICE_PUMP_THRESHOLD: float = 10.0  # 拉升阈值 (%)
+    PRICE_DUMP_THRESHOLD: float = -10.0  # 暴跌阈值 (%)
     PRICE_TIME_WINDOW: int = 60  # 时间窗口 (秒)
     PRICE_COOLDOWN: int = 120  # 冷却时间 (秒)
     

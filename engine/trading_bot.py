@@ -85,21 +85,22 @@ class TradingBot:
             logger.error("❌ 连接器初始化失败")
             return False
         
-        # 2. 执行引擎
-        self.engine = ExecutionEngine(
-            connector=self.connector,
-            event_bus=self.event_bus,
-            max_concurrent=3,
-        )
-        await self.engine.start()
-        
-        # 3. 风控 (HardCheck)
+        # 2. 风控 (HardCheck) - 必须在 ExecutionEngine 之前创建
         risk_config = RiskConfig(
             max_position_size={self.symbol: settings.MAX_POSITION_SIZE_USDC / 1000},  # 转换为币数
             max_daily_loss=settings.MAX_DAILY_LOSS_PCT * 100,  # 转换为 USDC
             max_single_order_size={self.symbol: settings.MAX_POSITION_SIZE_USDC / 1000},
         )
         self.risk_manager = RiskManager(risk_config)
+        
+        # 3. 执行引擎 (传入风控模块)
+        self.engine = ExecutionEngine(
+            connector=self.connector,
+            event_bus=self.event_bus,
+            max_concurrent=3,
+            risk_manager=self.risk_manager,  # 关键：传入风控模块
+        )
+        await self.engine.start()
         
         # 4. 仓位计算器 (Kelly Criterion)
         self.position_sizer = PositionSizer(

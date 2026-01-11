@@ -46,12 +46,21 @@ class ConnectorFactory:
         return list(cls._registry.keys())
 
 
-# 自动注册 Lighter 连接器
+# 自动注册连接器
 def _auto_register():
+    # Lighter DEX
     try:
         from connectors.lighter.client import LighterConnector
         ConnectorFactory.register("lighter", LighterConnector)
     except ImportError:
         pass
+    
+    # Binance Spot
+    try:
+        from connectors.binance.client import BinanceConnector
+        ConnectorFactory.register("binance", BinanceConnector)
+    except ImportError:
+        pass
 
 _auto_register()
+

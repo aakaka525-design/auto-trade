@@ -203,6 +203,21 @@ class EventBus:
         """启动事件总线"""
         self._running = True
         logger.info("EventBus 已启动")
+    
+    @classmethod
+    def reset(cls) -> None:
+        """
+        重置单例状态 (用于测试)
+        
+        在测试之间调用此方法以确保隔离性。
+        """
+        if cls._instance is not None:
+            cls._instance._subscribers.clear()
+            cls._instance._history.clear()
+            cls._instance._running = True
+            cls._instance._initialized = False
+            cls._instance = None
+            logger.debug("EventBus 单例已重置")
 
 
 # ==================== 便捷函数 ====================

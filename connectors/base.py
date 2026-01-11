@@ -107,9 +107,10 @@ class Order:
     created_at: datetime = field(default_factory=datetime.now)
     
     def to_global_id(self) -> str:
-        """生成 Global Order ID"""
-        ts = int(self.created_at.timestamp())
-        return f"ORD_{self.side.value.upper()}_{ts}"
+        """生成 Global Order ID (唯一)"""
+        ts_ms = int(self.created_at.timestamp() * 1000)  # 毫秒级
+        seq = id(self) % 10000  # 对象 ID 取模作为序列号
+        return f"ORD_{self.side.value.upper()}_{ts_ms}_{seq:04d}"
 
 
 @dataclass

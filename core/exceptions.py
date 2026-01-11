@@ -5,6 +5,11 @@ DEX 特定异常类
 """
 
 
+class TradingError(Exception):
+    """交易系统基础异常类"""
+    pass
+
+
 class AIProviderError(Exception):
     """AI 服务调用错误"""
     pass
@@ -20,9 +25,9 @@ class SignalParseError(Exception):
     pass
 
 
-class RiskLimitExceeded(Exception):
-    """风控限制超出"""
-    pass
+# RiskLimitExceeded 已移至 risk.manager.RiskLimitExceededError
+# 保留此别名以兼容旧代码
+from risk.manager import RiskLimitExceededError as RiskLimitExceeded
 
 
 # ==================== 交易所连接异常 ====================

@@ -1,119 +1,162 @@
-# DEX HFT 核心模块实现详情
+# 实现细节文档
 
-> 存档文档 - 供下游协作者参考 (更新: 2026-01-09)
-
-## 已实现模块清单
-
-### 1. 异常层 (`core/exceptions.py`)
-
-新增 DEX 特定异常:
-
-| 异常类 | 用途 | retryable |
-|--------|------|-----------|
-| `RPCTimeoutError` | RPC 超时 | ✓ |
-| `RateLimitExceededError` | HTTP 429 | ✓ |
-| `NonceConflictError` | Nonce 重复 | ✓ |
-| `InsufficientLiquidityError` | 流动性不足 | ✗ |
-| `OrderTimeoutError` | 订单超时 | ✓ |
+> **更新日期**: 2026-01-11  
+> **版本**: 2.0
 
 ---
 
-### 2. 重试工具 (`connectors/retry.py`)
+## 一、多交易所连接器 (Connectors)
 
-```python
-# 指数退避重试
-await retry_async(lambda: api_call(), config=RetryConfig(max_retries=5))
+### 1.1 架构概览
 
-# 令牌桶限流
-limiter = TokenBucketLimiter(rate=400)  # 400/秒
-await limiter.acquire(weight=6)
-
-# Nonce 管理
-manager = NonceManager(initial_nonce=100)
-nonce = await manager.get_next()
+```
+connectors/
+├── base.py                  # BaseConnector 抽象基类
+├── factory.py               # ConnectorFactory 工厂模式
+├── lighter/
+│   ├── client.py            # LighterConnector
+│   ├── ws_orderbook.py      # WebSocket 订单簿
+│   └── account_ws.py        # 账户数据流
+└── binance/
+    ├── client.py            # BinanceConnector
+    ├── auth.py              # HMAC-SHA256 签名
+    └── ws_streams.py        # WebSocket 数据流
 ```
 
----
+### 1.2 BinanceConnector 功能
 
-### 3. 执行引擎 (`engine/execution_engine.py`)
-
-核心接口:
-
-```python
-engine = ExecutionEngine(connector, event_bus)
-await engine.start()
-
-# 提交订单
-order_id = await engine.submit(signal, symbol="ETH-USDC", size=0.1)
-
-# 等待完成
-result = await engine.wait_for(order_id)
-```
-
-特性:
-- 优先级队列调度
-- 并发限制 (默认 5)
-- 状态机跟踪 (PENDING → SUBMITTING → FILLED)
-
----
-
-### 4. HFT 策略模板 (`strategies/hft_scalper.py`)
-
-信号触发逻辑:
-
-```python
-strategy = HFTScalperStrategy(
-    spread_threshold_pct=0.001,  # 0.1% 价差
-    imbalance_threshold=0.3      # 30% 不平衡
-)
-
-# 订单簿驱动信号
-signal = strategy.on_orderbook(orderbook)
-```
-
----
-
-### 5. LighterConnector 增强
-
-重构要点:
-- 集成 `TokenBucketLimiter` (Premium: 24000 权重/分钟)
-- Nonce 冲突自动恢复
-- WebSocket 断线自动重连 (最多 10 次)
-- 健康检查接口
-
----
-
-## Global ID 规范
-
-| 类型 | 格式 | 示例 |
+| 功能 | 方法 | 说明 |
 |------|------|------|
-| 订单 | `ORD_{SIDE}_{TS}_{SEQ}` | `ORD_BUY_1704789600_1234` |
-| 信号 | `SIG_{ACTION}_{TS}` | `SIG_BUY_1704789600` |
+| 连接管理 | `connect()`, `disconnect()` | 自动时间同步 |
+| 订单簿 | `get_orderbook()` | REST API 快照 |
+| K 线 | `get_candlesticks()` | 支持多时间周期 |
+| 最新价 | `get_ticker_price()` | 实时价格 |
+| 账户 | `get_account()` | USDT 余额 |
+| 下单 | `create_order()` | 限价/市价/止损 |
+| 撤单 | `cancel_order()`, `cancel_all_orders()` | 单个/批量 |
+| **WS 订单簿** | `stream_orderbook()` | 实时深度流 |
+| **WS 成交** | `stream_trades()` | 聚合成交流 |
+| **WS 用户数据** | `get_user_data_stream()` | 订单状态更新 |
+
+### 1.3 认证和限流
+
+```python
+# 签名 (auth.py)
+class BinanceAuth:
+    def sign(params) -> str          # HMAC-SHA256
+    def sign_params(params) -> dict  # 添加时间戳和签名
+    async def sync_server_time()     # 服务器时间同步
+
+# 限流 (client.py)
+self._rate_limiter = TokenBucketLimiter(
+    rate=20,      # 每秒 20 权重
+    capacity=1200 # Binance: 1200/分钟
+)
+```
 
 ---
 
-## 下游集成指引
+## 二、配置管理
 
-1. **启动执行引擎**
-   ```python
-   from engine import ExecutionEngine, get_event_bus
-   from connectors.lighter import LighterConnector
-   
-   connector = LighterConnector(config)
-   await connector.connect()
-   
-   engine = ExecutionEngine(connector, get_event_bus())
-   await engine.start()
-   ```
+### 2.1 多交易所配置
 
-2. **注册策略**
-   ```python
-   from strategies import HFTScalperStrategy
-   
-   strategy = HFTScalperStrategy()
-   # 订阅订单簿更新
-   async for ob in connector.stream_orderbook("ETH-USDC"):
-       signal = strategy.on_orderbook(ob)
-       if signal and signal.is_entry:
-           await engine.submit(signal, symbol="ETH-USDC", size=0.1)
-   ```
+```bash
+# 交易执行
+ACTIVE_EXCHANGE=lighter          # lighter | binance
+
+# 监控 (支持多选)
+MONITOR_EXCHANGES=lighter,binance
+
+# Binance 配置
+BINANCE_API_KEY=xxx
+BINANCE_API_SECRET=xxx
+BINANCE_TESTNET=false
+```
+
+### 2.2 工厂模式使用
+
+```python
+from connectors import ConnectorFactory
+
+# 动态创建连接器
+lighter = ConnectorFactory.create("lighter", {...})
+binance = ConnectorFactory.create("binance", {...})
+
+# 获取可用连接器
+print(ConnectorFactory.available())  # ['lighter', 'binance']
+```
+
+---
+
+## 三、WebSocket 数据流
+
+### 3.1 Binance WebSocket (ws_streams.py)
+
+```python
+# 订单簿流
+async for orderbook in connector.stream_orderbook("ETH-USDT"):
+    print(f"Best Bid: {orderbook.best_bid}")
+
+# 成交流
+async for trade in connector.stream_trades("BTC-USDT"):
+    print(f"{trade.side}: {trade.price} x {trade.size}")
+
+# 用户数据流 (订单更新)
+user_stream = await connector.get_user_data_stream()
+await user_stream.start()
+
+async for update in user_stream.stream_order_updates():
+    print(f"订单 {update.order_id}: {update.status}")
+```
+
+### 3.2 支持的流类型
+
+| 流类型 | Binance | Lighter |
+|--------|---------|---------|
+| 订单簿快照 | `@depth5/10/20` | ✅ |
+| 订单簿增量 | `@depth@100ms` | ✅ |
+| 成交流 | `@aggTrade` | ✅ |
+| 用户数据 | listenKey | ✅ |
+
+---
+
+## 四、错误处理
+
+### 4.1 异常层次
+
+```
+TradingError (基类)
+├── ExchangeConnectionError
+│   ├── RPCTimeoutError
+│   ├── RateLimitExceededError
+│   └── WebSocketDisconnectedError
+└── OrderExecutionError
+    ├── NonceConflictError
+    ├── InsufficientBalanceError
+    └── OrderRejectedError
+```
+
+### 4.2 Binance 错误码映射
+
+| 错误码 | 含义 | 处理 |
+|--------|------|------|
+| `-1000` | 未知错误 | 重试 |
+| `-1015` | 限流 | 等待 60s |
+| `-1021` | 时间戳问题 | 重新同步 |
+| `-2010` | 余额不足 | 拒绝 |
+| `-2011` | 未知订单 | 忽略 |
+
+---
+
+## 五、测试覆盖
+
+```bash
+pytest tests/ -v
+# 10/10 通过
+```
+
+| 测试模块 | 覆盖 |
+|----------|------|
+| `test_risk_manager.py` | RiskManager 风控检查 |
+| `test_engine_integration.py` | ExecutionEngine 集成 |
+| `test_lighter_api.py` | Lighter API 连接 |
