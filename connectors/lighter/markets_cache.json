@@ -1,37 +1,37 @@
 {
-  "updated_at": "2026-01-09T18:18:11.463211",
+  "updated_at": "2026-01-11T16:23:02.440975",
   "markets": {
-    "41": {
-      "ticker": "VIRTUAL-USDC",
-      "symbol": "VIRTUAL",
+    "67": {
+      "ticker": "TIA-USDC",
+      "symbol": "TIA",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "6": {
-      "ticker": "WLD-USDC",
-      "symbol": "WLD",
+    "104": {
+      "ticker": "STRK-USDC",
+      "symbol": "STRK",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "48": {
-      "ticker": "PAXG-USDC",
-      "symbol": "PAXG",
+    "77": {
+      "ticker": "XMR-USDC",
+      "symbol": "XMR",
       "category": "perp",
       "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
+      "price_decimals": 3,
+      "size_decimals": 3
     },
-    "14": {
-      "ticker": "POL-USDC",
-      "symbol": "POL",
+    "5": {
+      "ticker": "WIF-USDC",
+      "symbol": "WIF",
       "category": "perp",
       "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
+      "price_decimals": 5,
+      "size_decimals": 1
     },
     "29": {
       "ticker": "ENA-USDC",
@@ -41,6 +41,70 @@
       "price_decimals": 5,
       "size_decimals": 1
     },
+    "121": {
+      "ticker": "CRCL-USDC",
+      "symbol": "CRCL",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "22": {
+      "ticker": "AI16Z-USDC",
+      "symbol": "AI16Z",
+      "category": "perp",
+      "status": "inactive",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "92": {
+      "ticker": "XAU-USDC",
+      "symbol": "XAU",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "2049": {
+      "ticker": "LIT-USDC",
+      "symbol": "LIT/USDC",
+      "category": "spot",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "89": {
+      "ticker": "EDEN-USDC",
+      "symbol": "EDEN",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "81": {
+      "ticker": "1000TOSHI-USDC",
+      "symbol": "1000TOSHI",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "21": {
+      "ticker": "FARTCOIN-USDC",
+      "symbol": "FARTCOIN",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "110": {
+      "ticker": "NVDA-USDC",
+      "symbol": "NVDA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
     "116": {
       "ticker": "GOOGL-USDC",
       "symbol": "GOOGL",
@@ -49,37 +113,37 @@
       "price_decimals": 2,
       "size_decimals": 4
     },
-    "61": {
-      "ticker": "GMX-USDC",
-      "symbol": "GMX",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "42": {
-      "ticker": "SPX-USDC",
-      "symbol": "SPX",
+    "32": {
+      "ticker": "SEI-USDC",
+      "symbol": "SEI",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "95": {
-      "ticker": "MET-USDC",
-      "symbol": "MET",
+    "106": {
+      "ticker": "AUDUSD-USDC",
+      "symbol": "AUDUSD",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "80": {
-      "ticker": "MYX-USDC",
-      "symbol": "MYX",
+    "45": {
+      "ticker": "PUMP-USDC",
+      "symbol": "PUMP",
       "category": "perp",
       "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "57": {
+      "ticker": "PROVE-USDC",
+      "symbol": "PROVE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
     },
     "114": {
       "ticker": "AMZN-USDC",
@@ -89,33 +153,97 @@
       "price_decimals": 3,
       "size_decimals": 3
     },
-    "30": {
-      "ticker": "UNI-USDC",
-      "symbol": "UNI",
-      "category": "perp",
+    "2053": {
+      "ticker": "SKY-USDC",
+      "symbol": "SKY/USDC",
+      "category": "spot",
       "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
+      "price_decimals": 6,
+      "size_decimals": 0
     },
-    "39": {
-      "ticker": "ADA-USDC",
-      "symbol": "ADA",
+    "59": {
+      "ticker": "HBAR-USDC",
+      "symbol": "HBAR",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "58": {
-      "ticker": "BCH-USDC",
-      "symbol": "BCH",
+    "102": {
+      "ticker": "ICP-USDC",
+      "symbol": "ICP",
       "category": "perp",
       "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
+      "price_decimals": 4,
+      "size_decimals": 2
     },
-    "84": {
-      "ticker": "0G-USDC",
-      "symbol": "0G",
+    "6": {
+      "ticker": "WLD-USDC",
+      "symbol": "WLD",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "37": {
+      "ticker": "PENDLE-USDC",
+      "symbol": "PENDLE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "94": {
+      "ticker": "MEGA-USDC",
+      "symbol": "MEGA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "119": {
+      "ticker": "XLM-USDC",
+      "symbol": "XLM",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "78": {
+      "ticker": "PYTH-USDC",
+      "symbol": "PYTH",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "60": {
+      "ticker": "ZRO-USDC",
+      "symbol": "ZRO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "73": {
+      "ticker": "CRO-USDC",
+      "symbol": "CRO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "91": {
+      "ticker": "MON-USDC",
+      "symbol": "MON",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "15": {
+      "ticker": "TRUMP-USDC",
+      "symbol": "TRUMP",
       "category": "perp",
       "status": "active",
       "price_decimals": 4,
@@ -129,53 +257,13 @@
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "27": {
-      "ticker": "AAVE-USDC",
-      "symbol": "AAVE",
+    "93": {
+      "ticker": "XAG-USDC",
+      "symbol": "XAG",
       "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "26": {
-      "ticker": "JUP-USDC",
-      "symbol": "JUP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "18": {
-      "ticker": "1000BONK-USDC",
-      "symbol": "1000BONK",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "2049": {
-      "ticker": "LIT-USDC",
-      "symbol": "LIT/USDC",
-      "category": "spot",
       "status": "active",
       "price_decimals": 4,
       "size_decimals": 2
-    },
-    "115": {
-      "ticker": "MSFT-USDC",
-      "symbol": "MSFT",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "59": {
-      "ticker": "HBAR-USDC",
-      "symbol": "HBAR",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
     },
     "49": {
       "ticker": "EIGEN-USDC",
@@ -185,77 +273,101 @@
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "89": {
-      "ticker": "EDEN-USDC",
-      "symbol": "EDEN",
+    "2050": {
+      "ticker": "LINK-USDC",
+      "symbol": "LINK/USDC",
+      "category": "spot",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "16": {
+      "ticker": "SUI-USDC",
+      "symbol": "SUI",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "98": {
-      "ticker": "USDJPY-USDC",
-      "symbol": "USDJPY",
+    "72": {
+      "ticker": "WLFI-USDC",
+      "symbol": "WLFI",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "97": {
+      "ticker": "GBPUSD-USDC",
+      "symbol": "GBPUSD",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "63": {
+      "ticker": "MNT-USDC",
+      "symbol": "MNT",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "75": {
+      "ticker": "DOLO-USDC",
+      "symbol": "DOLO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "8": {
+      "ticker": "LINK-USDC",
+      "symbol": "LINK",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "71": {
+      "ticker": "XPL-USDC",
+      "symbol": "XPL",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "48": {
+      "ticker": "PAXG-USDC",
+      "symbol": "PAXG",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "61": {
+      "ticker": "GMX-USDC",
+      "symbol": "GMX",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "58": {
+      "ticker": "BCH-USDC",
+      "symbol": "BCH",
       "category": "perp",
       "status": "active",
       "price_decimals": 3,
       "size_decimals": 3
     },
-    "0": {
-      "ticker": "ETH-USDC",
-      "symbol": "ETH",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "105": {
-      "ticker": "USDKRW-USDC",
-      "symbol": "USDKRW",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "117": {
-      "ticker": "META-USDC",
-      "symbol": "META",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "68": {
-      "ticker": "MORPHO-USDC",
-      "symbol": "MORPHO",
+    "107": {
+      "ticker": "NZDUSD-USDC",
+      "symbol": "NZDUSD",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
-    },
-    "112": {
-      "ticker": "TSLA-USDC",
-      "symbol": "TSLA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "46": {
-      "ticker": "LDO-USDC",
-      "symbol": "LDO",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "79": {
-      "ticker": "SKY-USDC",
-      "symbol": "SKY",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
     },
     "74": {
       "ticker": "NMR-USDC",
@@ -273,6 +385,518 @@
       "price_decimals": 3,
       "size_decimals": 3
     },
+    "105": {
+      "ticker": "USDKRW-USDC",
+      "symbol": "USDKRW",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "95": {
+      "ticker": "MET-USDC",
+      "symbol": "MET",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "47": {
+      "ticker": "PENGU-USDC",
+      "symbol": "PENGU",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "85": {
+      "ticker": "STBL-USDC",
+      "symbol": "STBL",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "2051": {
+      "ticker": "UNI-USDC",
+      "symbol": "UNI/USDC",
+      "category": "spot",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "13": {
+      "ticker": "TAO-USDC",
+      "symbol": "TAO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "27": {
+      "ticker": "AAVE-USDC",
+      "symbol": "AAVE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "87": {
+      "ticker": "FF-USDC",
+      "symbol": "FF",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "3": {
+      "ticker": "DOGE-USDC",
+      "symbol": "DOGE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "52": {
+      "ticker": "GRASS-USDC",
+      "symbol": "GRASS",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "42": {
+      "ticker": "SPX-USDC",
+      "symbol": "SPX",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "118": {
+      "ticker": "STABLE-USDC",
+      "symbol": "STABLE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "65": {
+      "ticker": "AERO-USDC",
+      "symbol": "AERO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "2054": {
+      "ticker": "LDO-USDC",
+      "symbol": "LDO/USDC",
+      "category": "spot",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "2052": {
+      "ticker": "AAVE-USDC",
+      "symbol": "AAVE/USDC",
+      "category": "spot",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "7": {
+      "ticker": "XRP-USDC",
+      "symbol": "XRP",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "113": {
+      "ticker": "AAPL-USDC",
+      "symbol": "AAPL",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "99": {
+      "ticker": "USDCHF-USDC",
+      "symbol": "USDCHF",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "109": {
+      "ticker": "COIN-USDC",
+      "symbol": "COIN",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "50": {
+      "ticker": "ARB-USDC",
+      "symbol": "ARB",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "20": {
+      "ticker": "BERA-USDC",
+      "symbol": "BERA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "12": {
+      "ticker": "TON-USDC",
+      "symbol": "TON",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "66": {
+      "ticker": "USELESS-USDC",
+      "symbol": "USELESS",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "41": {
+      "ticker": "VIRTUAL-USDC",
+      "symbol": "VIRTUAL",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "1": {
+      "ticker": "BTC-USDC",
+      "symbol": "BTC",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 1,
+      "size_decimals": 5
+    },
+    "80": {
+      "ticker": "MYX-USDC",
+      "symbol": "MYX",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "51": {
+      "ticker": "RESOLV-USDC",
+      "symbol": "RESOLV",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "117": {
+      "ticker": "META-USDC",
+      "symbol": "META",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "76": {
+      "ticker": "LINEA-USDC",
+      "symbol": "LINEA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "112": {
+      "ticker": "TSLA-USDC",
+      "symbol": "TSLA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "56": {
+      "ticker": "ZK-USDC",
+      "symbol": "ZK",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "43": {
+      "ticker": "TRX-USDC",
+      "symbol": "TRX",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "19": {
+      "ticker": "1000FLOKI-USDC",
+      "symbol": "1000FLOKI",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "28": {
+      "ticker": "MKR-USDC",
+      "symbol": "MKR",
+      "category": "perp",
+      "status": "inactive",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "108": {
+      "ticker": "HOOD-USDC",
+      "symbol": "HOOD",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "123": {
+      "ticker": "BMNR-USDC",
+      "symbol": "BMNR",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "68": {
+      "ticker": "MORPHO-USDC",
+      "symbol": "MORPHO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "23": {
+      "ticker": "POPCAT-USDC",
+      "symbol": "POPCAT",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "4": {
+      "ticker": "1000PEPE-USDC",
+      "symbol": "1000PEPE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "36": {
+      "ticker": "CRV-USDC",
+      "symbol": "CRV",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "115": {
+      "ticker": "MSFT-USDC",
+      "symbol": "MSFT",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "35": {
+      "ticker": "LTC-USDC",
+      "symbol": "LTC",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "69": {
+      "ticker": "VVV-USDC",
+      "symbol": "VVV",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "24": {
+      "ticker": "HYPE-USDC",
+      "symbol": "HYPE",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "120": {
+      "ticker": "LIT-USDC",
+      "symbol": "LIT",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "70": {
+      "ticker": "YZY-USDC",
+      "symbol": "YZY",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "0": {
+      "ticker": "ETH-USDC",
+      "symbol": "ETH",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "17": {
+      "ticker": "1000SHIB-USDC",
+      "symbol": "1000SHIB",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "96": {
+      "ticker": "EURUSD-USDC",
+      "symbol": "EURUSD",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "111": {
+      "ticker": "PLTR-USDC",
+      "symbol": "PLTR",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "101": {
+      "ticker": "CC-USDC",
+      "symbol": "CC",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "88": {
+      "ticker": "2Z-USDC",
+      "symbol": "2Z",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "64": {
+      "ticker": "ETHFI-USDC",
+      "symbol": "ETHFI",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "34": {
+      "ticker": "IP-USDC",
+      "symbol": "IP",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "90": {
+      "ticker": "ZEC-USDC",
+      "symbol": "ZEC",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "39": {
+      "ticker": "ADA-USDC",
+      "symbol": "ADA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "25": {
+      "ticker": "BNB-USDC",
+      "symbol": "BNB",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "84": {
+      "ticker": "0G-USDC",
+      "symbol": "0G",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "11": {
+      "ticker": "DOT-USDC",
+      "symbol": "DOT",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "33": {
+      "ticker": "KAITO-USDC",
+      "symbol": "KAITO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "53": {
+      "ticker": "ZORA-USDC",
+      "symbol": "ZORA",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "10": {
+      "ticker": "NEAR-USDC",
+      "symbol": "NEAR",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "100": {
+      "ticker": "USDCAD-USDC",
+      "symbol": "USDCAD",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "83": {
+      "ticker": "ASTER-USDC",
+      "symbol": "ASTER",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
     "54": {
       "ticker": "LAUNCHCOIN-USDC",
       "symbol": "LAUNCHCOIN",
@@ -289,14 +913,6 @@
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "119": {
-      "ticker": "XLM-USDC",
-      "symbol": "XLM",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
     "38": {
       "ticker": "ONDO-USDC",
       "symbol": "ONDO",
@@ -305,561 +921,25 @@
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "17": {
-      "ticker": "1000SHIB-USDC",
-      "symbol": "1000SHIB",
+    "14": {
+      "ticker": "POL-USDC",
+      "symbol": "POL",
       "category": "perp",
       "status": "active",
       "price_decimals": 6,
       "size_decimals": 0
     },
-    "110": {
-      "ticker": "NVDA-USDC",
-      "symbol": "NVDA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "2048": {
-      "ticker": "ETH-USDC",
-      "symbol": "ETH/USDC",
-      "category": "spot",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "1": {
-      "ticker": "BTC-USDC",
-      "symbol": "BTC",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 1,
-      "size_decimals": 5
-    },
-    "73": {
-      "ticker": "CRO-USDC",
-      "symbol": "CRO",
+    "26": {
+      "ticker": "JUP-USDC",
+      "symbol": "JUP",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
       "size_decimals": 1
-    },
-    "34": {
-      "ticker": "IP-USDC",
-      "symbol": "IP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "120": {
-      "ticker": "LIT-USDC",
-      "symbol": "LIT",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "77": {
-      "ticker": "XMR-USDC",
-      "symbol": "XMR",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "50": {
-      "ticker": "ARB-USDC",
-      "symbol": "ARB",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "7": {
-      "ticker": "XRP-USDC",
-      "symbol": "XRP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "122": {
-      "ticker": "MSTR-USDC",
-      "symbol": "MSTR",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "108": {
-      "ticker": "HOOD-USDC",
-      "symbol": "HOOD",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "90": {
-      "ticker": "ZEC-USDC",
-      "symbol": "ZEC",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
     },
     "82": {
       "ticker": "AVNT-USDC",
       "symbol": "AVNT",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "24": {
-      "ticker": "HYPE-USDC",
-      "symbol": "HYPE",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "102": {
-      "ticker": "ICP-USDC",
-      "symbol": "ICP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "104": {
-      "ticker": "STRK-USDC",
-      "symbol": "STRK",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "51": {
-      "ticker": "RESOLV-USDC",
-      "symbol": "RESOLV",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "19": {
-      "ticker": "1000FLOKI-USDC",
-      "symbol": "1000FLOKI",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "118": {
-      "ticker": "STABLE-USDC",
-      "symbol": "STABLE",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "121": {
-      "ticker": "CRCL-USDC",
-      "symbol": "CRCL",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "8": {
-      "ticker": "LINK-USDC",
-      "symbol": "LINK",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "88": {
-      "ticker": "2Z-USDC",
-      "symbol": "2Z",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "70": {
-      "ticker": "YZY-USDC",
-      "symbol": "YZY",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "36": {
-      "ticker": "CRV-USDC",
-      "symbol": "CRV",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "13": {
-      "ticker": "TAO-USDC",
-      "symbol": "TAO",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "111": {
-      "ticker": "PLTR-USDC",
-      "symbol": "PLTR",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "52": {
-      "ticker": "GRASS-USDC",
-      "symbol": "GRASS",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "101": {
-      "ticker": "CC-USDC",
-      "symbol": "CC",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "64": {
-      "ticker": "ETHFI-USDC",
-      "symbol": "ETHFI",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "44": {
-      "ticker": "SYRUP-USDC",
-      "symbol": "SYRUP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "35": {
-      "ticker": "LTC-USDC",
-      "symbol": "LTC",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "16": {
-      "ticker": "SUI-USDC",
-      "symbol": "SUI",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "87": {
-      "ticker": "FF-USDC",
-      "symbol": "FF",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "83": {
-      "ticker": "ASTER-USDC",
-      "symbol": "ASTER",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "123": {
-      "ticker": "BMNR-USDC",
-      "symbol": "BMNR",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "21": {
-      "ticker": "FARTCOIN-USDC",
-      "symbol": "FARTCOIN",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "113": {
-      "ticker": "AAPL-USDC",
-      "symbol": "AAPL",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "76": {
-      "ticker": "LINEA-USDC",
-      "symbol": "LINEA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "72": {
-      "ticker": "WLFI-USDC",
-      "symbol": "WLFI",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "81": {
-      "ticker": "1000TOSHI-USDC",
-      "symbol": "1000TOSHI",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "96": {
-      "ticker": "EURUSD-USDC",
-      "symbol": "EURUSD",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "66": {
-      "ticker": "USELESS-USDC",
-      "symbol": "USELESS",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "106": {
-      "ticker": "AUDUSD-USDC",
-      "symbol": "AUDUSD",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "60": {
-      "ticker": "ZRO-USDC",
-      "symbol": "ZRO",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "53": {
-      "ticker": "ZORA-USDC",
-      "symbol": "ZORA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "91": {
-      "ticker": "MON-USDC",
-      "symbol": "MON",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "9": {
-      "ticker": "AVAX-USDC",
-      "symbol": "AVAX",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "32": {
-      "ticker": "SEI-USDC",
-      "symbol": "SEI",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "71": {
-      "ticker": "XPL-USDC",
-      "symbol": "XPL",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "94": {
-      "ticker": "MEGA-USDC",
-      "symbol": "MEGA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "86": {
-      "ticker": "APEX-USDC",
-      "symbol": "APEX",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "109": {
-      "ticker": "COIN-USDC",
-      "symbol": "COIN",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 3,
-      "size_decimals": 3
-    },
-    "45": {
-      "ticker": "PUMP-USDC",
-      "symbol": "PUMP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "63": {
-      "ticker": "MNT-USDC",
-      "symbol": "MNT",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "43": {
-      "ticker": "TRX-USDC",
-      "symbol": "TRX",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "15": {
-      "ticker": "TRUMP-USDC",
-      "symbol": "TRUMP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "57": {
-      "ticker": "PROVE-USDC",
-      "symbol": "PROVE",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "4": {
-      "ticker": "1000PEPE-USDC",
-      "symbol": "1000PEPE",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "85": {
-      "ticker": "STBL-USDC",
-      "symbol": "STBL",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "25": {
-      "ticker": "BNB-USDC",
-      "symbol": "BNB",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "37": {
-      "ticker": "PENDLE-USDC",
-      "symbol": "PENDLE",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "12": {
-      "ticker": "TON-USDC",
-      "symbol": "TON",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "3": {
-      "ticker": "DOGE-USDC",
-      "symbol": "DOGE",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "11": {
-      "ticker": "DOT-USDC",
-      "symbol": "DOT",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "55": {
-      "ticker": "OP-USDC",
-      "symbol": "OP",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "10": {
-      "ticker": "NEAR-USDC",
-      "symbol": "NEAR",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "75": {
-      "ticker": "DOLO-USDC",
-      "symbol": "DOLO",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "100": {
-      "ticker": "USDCAD-USDC",
-      "symbol": "USDCAD",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "107": {
-      "ticker": "NZDUSD-USDC",
-      "symbol": "NZDUSD",
       "category": "perp",
       "status": "active",
       "price_decimals": 5,
@@ -873,6 +953,62 @@
       "price_decimals": 4,
       "size_decimals": 2
     },
+    "98": {
+      "ticker": "USDJPY-USDC",
+      "symbol": "USDJPY",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 3,
+      "size_decimals": 3
+    },
+    "46": {
+      "ticker": "LDO-USDC",
+      "symbol": "LDO",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "86": {
+      "ticker": "APEX-USDC",
+      "symbol": "APEX",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
+    "30": {
+      "ticker": "UNI-USDC",
+      "symbol": "UNI",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 4,
+      "size_decimals": 2
+    },
+    "79": {
+      "ticker": "SKY-USDC",
+      "symbol": "SKY",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 6,
+      "size_decimals": 0
+    },
+    "122": {
+      "ticker": "MSTR-USDC",
+      "symbol": "MSTR",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 2,
+      "size_decimals": 4
+    },
+    "44": {
+      "ticker": "SYRUP-USDC",
+      "symbol": "SYRUP",
+      "category": "perp",
+      "status": "active",
+      "price_decimals": 5,
+      "size_decimals": 1
+    },
     "40": {
       "ticker": "S-USDC",
       "symbol": "S",
@@ -881,133 +1017,37 @@
       "price_decimals": 5,
       "size_decimals": 1
     },
-    "22": {
-      "ticker": "AI16Z-USDC",
-      "symbol": "AI16Z",
-      "category": "perp",
-      "status": "inactive",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "20": {
-      "ticker": "BERA-USDC",
-      "symbol": "BERA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "67": {
-      "ticker": "TIA-USDC",
-      "symbol": "TIA",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "97": {
-      "ticker": "GBPUSD-USDC",
-      "symbol": "GBPUSD",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "78": {
-      "ticker": "PYTH-USDC",
-      "symbol": "PYTH",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "5": {
-      "ticker": "WIF-USDC",
-      "symbol": "WIF",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "23": {
-      "ticker": "POPCAT-USDC",
-      "symbol": "POPCAT",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "69": {
-      "ticker": "VVV-USDC",
-      "symbol": "VVV",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 4,
-      "size_decimals": 2
-    },
-    "99": {
-      "ticker": "USDCHF-USDC",
-      "symbol": "USDCHF",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "33": {
-      "ticker": "KAITO-USDC",
-      "symbol": "KAITO",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
-    },
-    "56": {
-      "ticker": "ZK-USDC",
-      "symbol": "ZK",
+    "18": {
+      "ticker": "1000BONK-USDC",
+      "symbol": "1000BONK",
       "category": "perp",
       "status": "active",
       "price_decimals": 6,
       "size_decimals": 0
     },
-    "65": {
-      "ticker": "AERO-USDC",
-      "symbol": "AERO",
-      "category": "perp",
+    "2048": {
+      "ticker": "ETH-USDC",
+      "symbol": "ETH/USDC",
+      "category": "spot",
       "status": "active",
-      "price_decimals": 5,
-      "size_decimals": 1
+      "price_decimals": 2,
+      "size_decimals": 4
     },
-    "93": {
-      "ticker": "XAG-USDC",
-      "symbol": "XAG",
+    "9": {
+      "ticker": "AVAX-USDC",
+      "symbol": "AVAX",
       "category": "perp",
       "status": "active",
       "price_decimals": 4,
       "size_decimals": 2
     },
-    "47": {
-      "ticker": "PENGU-USDC",
-      "symbol": "PENGU",
+    "55": {
+      "ticker": "OP-USDC",
+      "symbol": "OP",
       "category": "perp",
       "status": "active",
-      "price_decimals": 6,
-      "size_decimals": 0
-    },
-    "92": {
-      "ticker": "XAU-USDC",
-      "symbol": "XAU",
-      "category": "perp",
-      "status": "active",
-      "price_decimals": 2,
-      "size_decimals": 4
-    },
-    "28": {
-      "ticker": "MKR-USDC",
-      "symbol": "MKR",
-      "category": "perp",
-      "status": "inactive",
-      "price_decimals": 2,
-      "size_decimals": 4
+      "price_decimals": 5,
+      "size_decimals": 1
     }
   }
 }

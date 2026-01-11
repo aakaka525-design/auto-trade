@@ -6,6 +6,10 @@ httpx>=0.26.0
 tenacity>=8.2.0
 python-dotenv>=1.0.0
 
+# WebSocket 和异步 HTTP
+aiohttp>=3.9.0
+websockets>=12.0
+
 # 技术指标计算
 pandas>=2.1.0
 numpy>=1.26.0
@@ -14,6 +18,20 @@ ta>=0.11.0
 # Lighter SDK
 lighter-python>=0.1.0
 
+# Binance 签名 (Ed25519)
+cryptography>=42.0.0
+
+# 监控指标
+prometheus-client>=0.19.0
+
+# 系统监控
+psutil>=5.9.0
+
+# 进程守护
+supervisor>=4.2.0
+
 # 开发依赖
 pytest>=7.4.0
 pytest-asyncio>=0.23.0
+pytest-freezegun>=0.4.0
+

@@ -127,13 +127,18 @@ class UnifiedMonitor:
             # 解析市场 ID
             market_ids_str = getattr(settings, 'MONITOR_MARKETS', '')
             if market_ids_str and market_ids_str != 'all':
-                market_ids = [int(m.strip()) for m in market_ids_str.split(',') if m.strip()]
+                try:
+                    market_ids = [int(m.strip()) for m in market_ids_str.split(',') if m.strip().isdigit()]
+                except ValueError:
+                    market_ids = None
             else:
                 market_ids = None  # 使用默认
             
             # 解析主流币 ID
             major_ids_str = getattr(settings, 'MAJOR_MARKET_IDS', '0,1,2,7,8,9,25')
-            major_ids = [int(m.strip()) for m in major_ids_str.split(',') if m.strip()]
+            major_ids = [int(m.strip()) for m in major_ids_str.split(',') if m.strip().isdigit()]
+            
+            logger.info("🔄 正在初始化 Lighter 监控...")
             
             monitor = MultiMarketMonitor(
                 market_ids=market_ids,
@@ -151,9 +156,11 @@ class UnifiedMonitor:
             await monitor.run()
             
         except ImportError as e:
-            logger.error(f"Lighter 监控依赖缺失: {e}")
+            logger.error(f"❌ Lighter 监控依赖缺失: {e}")
         except Exception as e:
-            logger.error(f"Lighter 监控异常: {e}")
+            import traceback
+            logger.error(f"❌ Lighter 监控异常: {e}")
+            logger.error(traceback.format_exc())
     
     async def _run_binance_monitor(self):
         """运行 Binance 监控"""
