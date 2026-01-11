@@ -50,26 +50,25 @@ auto_trade/
 ├── connectors/
 │   ├── base.py                       # BaseConnector 抽象基类
 │   ├── factory.py                    # ConnectorFactory 工厂模式
+│   ├── proxy_rotator.py              # 代理轮换
 │   ├── lighter/                      # Lighter DEX 连接器
-│   │   ├── client.py
-│   │   ├── ws_orderbook.py
-│   │   └── account_ws.py
 │   └── binance/                      # Binance Spot 连接器
-│       ├── client.py
-│       ├── auth.py
-│       └── ws_streams.py
 ├── scripts/
-│   └── run_multi_market_monitor.py   # 多市场监控脚本
+│   ├── run_binance_monitor.py        # Binance 全量监控
+│   ├── run_multi_market_monitor.py   # Lighter 多市场监控
+│   └── run_unified_monitor.py        # 统一监控入口 ✨
 ├── monitoring/
-│   ├── large_order_monitor.py        # 大单检测
-│   └── price_monitor.py              # 价格异常检测
-├── engine/
-│   └── execution_engine.py           # 订单执行引擎
-├── strategies/
-│   ├── base.py                       # 策略基类
-│   └── hft_scalper.py                # HFT 剥头皮策略
-├── risk/
-│   └── manager.py                    # 风险管理
+│   ├── alert_storage.py              # SQLite 告警持久化 ✨
+│   ├── metrics.py                    # Prometheus 指标 ✨
+│   ├── hot_config.py                 # 配置热更新 ✨
+│   ├── alert_aggregator.py           # 告警聚合 ✨
+│   └── backtest.py                   # 回测引擎 ✨
+├── grafana/
+│   └── dashboard.json                # Grafana 面板 ✨
+├── logs/                             # 日志文件 (按天轮转) ✨
+├── tests/
+│   └── test_binance_auth.py          # 单元测试 ✨
+├── supervisord.conf                  # 进程守护配置 ✨
 ├── config.py                         # 配置管理
 └── main.py                           # API 服务入口
 ```

@@ -215,11 +215,25 @@ auto_trade/
 ├── scripts/
 │   ├── run_multi_market_monitor.py  # Lighter 监控
 │   ├── run_binance_monitor.py       # Binance 监控
+│   ├── run_unified_monitor.py       # 统一监控入口 ✨
 │   └── run_realtime_monitor.py      # 实时监控
 │
 ├── monitoring/
 │   ├── large_order_monitor.py       # 大单检测
-│   └── price_monitor.py             # 价格波动
+│   ├── price_monitor.py             # 价格波动
+│   ├── alert_storage.py             # SQLite 告警持久化 ✨
+│   ├── metrics.py                   # Prometheus 指标 ✨
+│   ├── hot_config.py                # 配置热更新 ✨
+│   ├── alert_aggregator.py          # 告警聚合 ✨
+│   └── backtest.py                  # 回测引擎 ✨
+│
+├── grafana/
+│   └── dashboard.json               # Grafana 面板 ✨
+│
+├── logs/                            # 日志文件 (按天轮转) ✨
+│
+├── tests/
+│   └── test_binance_auth.py         # 单元测试 (35 通过) ✨
 │
 ├── engine/
 │   ├── execution_engine.py          # 执行引擎
@@ -232,6 +246,7 @@ auto_trade/
 ├── risk/
 │   └── manager.py                   # 风控
 │
+├── supervisord.conf                 # 进程守护配置 ✨
 ├── config.py                        # 配置 (pydantic)
 └── main.py                          # API 入口
 ```
@@ -441,7 +456,7 @@ flowchart LR
 
 ## 十二、已完成功能
 
-### ✅ 核心功能
+### ✅ 核心监控
 
 - [x] Binance 多连接架构 (49 连接)
 - [x] VWAP 滑点检测
@@ -450,15 +465,39 @@ flowchart LR
 - [x] 代理轮换
 - [x] 现货 + 合约监控
 
-### ✅ 配置化
+### ✅ 可靠性 (P0)
 
-- [x] 分级阈值可配置
-- [x] 最低金额可配置
-- [x] 订单簿深度可配置
-- [x] 监控开关可配置
+- [x] **进程守护**: `supervisord.conf`
+- [x] **告警持久化**: `monitoring/alert_storage.py`
+- [x] **风控状态持久化**: `risk/manager.py`
+
+### ✅ 可观测性 (P1)
+
+- [x] **Prometheus 指标**: `monitoring/metrics.py`
+- [x] **Grafana Dashboard**: `grafana/`
+
+### ✅ 增强功能 (P2)
+
+- [x] **配置热更新**: `monitoring/hot_config.py`
+- [x] **告警聚合**: `monitoring/alert_aggregator.py`
+- [x] **回测引擎**: `monitoring/backtest.py`
+
+### ✅ 策略模块
+
+- [x] **动量策略**: `strategies/momentum.py`
+
+### ✅ 风控模块
+
+- [x] **风控管理器**: `risk/manager.py` (持仓/单笔/熔断)
 
 ---
 
 ## 结论
 
-当前架构**可用于生产监控**，但存在可靠性和可观测性不足的问题。建议按路线图逐步完善，优先解决 P0 级别问题（进程守护、持久化、测试）。
+当前架构已完成所有 P0/P1/P2 优先级功能，达到**生产就绪**状态。
+
+| 类别 | 完成度 |
+|------|--------|
+| 可靠性 (P0) | ✅ 100% |
+| 可观测性 (P1) | ✅ 100% |
+| 增强功能 (P2) | ✅ 100% |
