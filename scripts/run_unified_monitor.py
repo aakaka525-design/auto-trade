@@ -153,7 +153,7 @@ class UnifiedMonitor:
             )
             
             logger.info("✅ Lighter 监控已启动")
-            await monitor.run()
+            await monitor.start()
             
         except ImportError as e:
             logger.error(f"❌ Lighter 监控依赖缺失: {e}")
@@ -213,9 +213,19 @@ async def main():
     
     # 信号处理
     loop = asyncio.get_event_loop()
+    _stop_count = 0
     
     def signal_handler():
-        asyncio.create_task(monitor.stop())
+        nonlocal _stop_count
+        _stop_count += 1
+        
+        if _stop_count == 1:
+            print("\n👋 正在优雅停止... (再按 Ctrl+C 强制退出)")
+            asyncio.create_task(monitor.stop())
+        else:
+            print("\n⚠️ 强制退出!")
+            import sys
+            sys.exit(1)
     
     for sig in (signal.SIGINT, signal.SIGTERM):
         try:
@@ -235,3 +245,6 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         print("\n👋 监控已停止")
+    except SystemExit:
+        pass
+

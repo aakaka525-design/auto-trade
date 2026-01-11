@@ -129,8 +129,28 @@ async def get_markets(force_refresh: bool = False) -> Dict[int, dict]:
 
 
 def get_markets_sync(force_refresh: bool = False) -> Dict[int, dict]:
-    """同步版本的 get_markets"""
-    return asyncio.run(get_markets(force_refresh))
+    """
+    同步版本的 get_markets
+    
+    兼容:
+    1. 没有事件循环时: 使用 asyncio.run()
+    2. 在运行的事件循环中: 优先使用缓存避免冲突
+    """
+    # 优先尝试使用缓存 (避免事件循环冲突)
+    if not force_refresh:
+        cached = load_cache()
+        if cached:
+            return cached
+    
+    # 检查是否在事件循环中
+    try:
+        loop = asyncio.get_running_loop()
+        # 在事件循环中，返回默认值或缓存
+        logger.warning("在事件循环中无法同步获取市场，使用缓存或默认值")
+        return load_cache() or DEFAULT_MARKETS
+    except RuntimeError:
+        # 没有运行的事件循环，可以使用 asyncio.run()
+        return asyncio.run(get_markets(force_refresh))
 
 
 # 默认主流币 (备用)

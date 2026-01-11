@@ -29,16 +29,19 @@ from monitoring.price_monitor import PriceMonitor, PriceAlert
 from monitoring.telegram_notifier import TelegramNotifier
 from connectors.lighter.markets import get_markets_sync, DEFAULT_MARKETS
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s.%(msecs)03d | %(message)s',
-    datefmt='%H:%M:%S'
-)
+# 获取 logger (不在此处配置，由调用方配置)
 logger = logging.getLogger(__name__)
 
 
-# 动态获取市场配置 (启动时从 API 加载或使用缓存)
-MARKETS = get_markets_sync() or DEFAULT_MARKETS
+# 延迟加载市场配置 (避免在事件循环中调用 asyncio.run)
+_MARKETS_CACHE = None
+
+def get_markets_lazy():
+    """延迟加载市场配置"""
+    global _MARKETS_CACHE
+    if _MARKETS_CACHE is None:
+        _MARKETS_CACHE = get_markets_sync() or DEFAULT_MARKETS
+    return _MARKETS_CACHE
 
 WS_URL = "wss://mainnet.zklighter.elliot.ai/stream"
 
@@ -83,7 +86,7 @@ class MultiMarketMonitor:
         # 每个市场的价格监控
         self._price_monitors: Dict[int, PriceMonitor] = {}
         for market_id in self.market_ids:
-            ticker = MARKETS.get(market_id, {}).get("ticker", f"MARKET-{market_id}")
+            ticker = get_markets_lazy().get(market_id, {}).get("ticker", f"MARKET-{market_id}")
             self._price_monitors[market_id] = PriceMonitor(
                 pump_threshold_pct=pump_threshold_pct,
                 dump_threshold_pct=dump_threshold_pct,
@@ -110,7 +113,7 @@ class MultiMarketMonitor:
         self._running = True
         
         markets_str = ", ".join(
-            MARKETS.get(m, {}).get("ticker", str(m)) for m in self.market_ids
+            get_markets_lazy().get(m, {}).get("ticker", str(m)) for m in self.market_ids
         )
         
         logger.info(f"🚀 多市场监控启动")
@@ -166,7 +169,7 @@ class MultiMarketMonitor:
                                 "channel": f"order_book/{market_id}"
                             }
                             await ws.send_json(sub_msg)
-                            ticker = MARKETS.get(market_id, {}).get("ticker", str(market_id))
+                            ticker = get_markets_lazy().get(market_id, {}).get("ticker", str(market_id))
                             logger.info(f"   订阅: {ticker}")
                         
                         # 启动心跳任务 (额外保活)
@@ -257,7 +260,7 @@ class MultiMarketMonitor:
     async def _process_orderbook(self, market_id: int, data: dict):
         """处理订单簿更新"""
         now = datetime.now()
-        ticker = MARKETS.get(market_id, {}).get("ticker", f"MARKET-{market_id}")
+        ticker = get_markets_lazy().get(market_id, {}).get("ticker", f"MARKET-{market_id}")
         
         bids = data.get("bids", [])
         asks = data.get("asks", [])
@@ -409,7 +412,7 @@ class MultiMarketMonitor:
     async def _send_order_alert(self, market_id: int, order: LargeOrder):
         """发送大单警报"""
         self._total_order_alerts += 1
-        ticker = MARKETS.get(market_id, {}).get("ticker", f"MARKET-{market_id}")
+        ticker = get_markets_lazy().get(market_id, {}).get("ticker", f"MARKET-{market_id}")
         
         emoji = "🟢" if order.side == "bid" else "🔴"
         logger.warning(f"{emoji} [{ticker}] 新增Δ! {order}")
@@ -426,7 +429,7 @@ class MultiMarketMonitor:
     async def _send_price_alert(self, market_id: int, alert: PriceAlert):
         """发送价格警报"""
         self._total_price_alerts += 1
-        ticker = MARKETS.get(market_id, {}).get("ticker", f"MARKET-{market_id}")
+        ticker = get_markets_lazy().get(market_id, {}).get("ticker", f"MARKET-{market_id}")
         
         logger.warning(f"[{ticker}] {alert}")
         
@@ -464,10 +467,10 @@ async def main():
     # 从配置获取监控市场
     custom_markets = getattr(settings, 'MONITOR_MARKETS', '') or os.environ.get("MONITOR_MARKETS", "")
     if custom_markets.lower() == "all":
-        market_ids = list(MARKETS.keys())
+        market_ids = list(get_markets_lazy().keys())
         logger.info(f"监控所有市场: {len(market_ids)} 个")
     elif custom_markets.lower() == "perp":
-        market_ids = [mid for mid, m in MARKETS.items() if m.get("category") == "perp"]
+        market_ids = [mid for mid, m in get_markets_lazy().items() if m.get("category") == "perp"]
         logger.info(f"监控永续合约: {len(market_ids)} 个")
     elif custom_markets:
         try:
@@ -504,7 +507,15 @@ async def main():
 
 
 if __name__ == "__main__":
+    # 仅在直接运行时配置日志
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s.%(msecs)03d | %(message)s',
+        datefmt='%H:%M:%S'
+    )
+    
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         pass
+
