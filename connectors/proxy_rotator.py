@@ -12,6 +12,10 @@ from typing import Optional, List, Tuple
 from dataclasses import dataclass
 from urllib.parse import urlparse
 
+# 确保在读取环境变量前加载 .env
+from dotenv import load_dotenv
+load_dotenv()
+
 import aiohttp
 from aiohttp_socks import ProxyConnector
 
